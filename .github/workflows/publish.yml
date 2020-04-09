@@ -9,18 +9,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-          registry-url: 'https://registry.npmjs.org'
       - run: npm install
       - run: npm run lint
       - run: npm test
       - run: npm run build
+
+  publish-npm:
+    needs: build
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+          registry-url: 'https://registry.npmjs.org'
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-gpr:
+    needs: build
+    steps:
       - uses: actions/setup-node@v1
         with:
           registry-url: 'https://npm.pkg.github.com'
