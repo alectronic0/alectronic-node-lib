@@ -1,0 +1,44 @@
+{
+  "name": "alectronic-node-libary",
+  "version": "1.0.0",
+  "description": "A hello node library",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rimraf lib/ && tsc",
+    "lint": "eslint src/ --ext .js,.ts",
+    "lint:fix": "eslint src/ --ext .js,.ts --fix",
+    "test": "rimraf coverage/ && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alectronic0/alectronic-node-lib.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alectronic0/alectronic-node-lib/issues"
+  },
+  "homepage": "https://github.com/alectronic0/alectronic-node-lib#readme",
+  "devDependencies": {
+    "@types/cls-hooked": "^4.3.0",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.5",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
+    "eslint": "^6.4.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3"
+  }
+}
